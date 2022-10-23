@@ -4,6 +4,7 @@ import com.test.cred.model.ResponseCode;
 
 import java.util.regex.Pattern;
 
+// number rule can also be implemented by extending AbstractLetterRule
 public class ContainsNumberRule implements Rule {
 
     private final String NUMBER_MATCHER_PATTERN = ".*\\d.*";

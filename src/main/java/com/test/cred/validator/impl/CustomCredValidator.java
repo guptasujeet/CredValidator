@@ -9,8 +9,8 @@ import java.util.List;
 public class CustomCredValidator implements CredValidator {
 
 
-    private final List<Rule> mandatoryRules;
-    private final CredValidator nextValidator;
+    protected final List<Rule> mandatoryRules;
+    protected final CredValidator nextValidator;
 
     public CustomCredValidator(List<Rule> mandatoryRules, CredValidator nextValidator) {
         this.mandatoryRules = mandatoryRules;

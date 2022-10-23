@@ -2,7 +2,7 @@ package com.test.cred.rule;
 
 import java.util.function.Predicate;
 
-public abstract class AbstractLetterRule implements Rule {
+public abstract class AbstractLetterRule extends DelayedProcessingRule {
 
 
     private final Predicate<Character> predicate;

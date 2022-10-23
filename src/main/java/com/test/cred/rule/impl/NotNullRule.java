@@ -1,13 +1,13 @@
 package com.test.cred.rule.impl;
 
 import com.test.cred.model.ResponseCode;
-import com.test.cred.rule.Rule;
+import com.test.cred.rule.DelayedProcessingRule;
 import org.apache.commons.lang3.StringUtils;
 
-public class NotNullRule implements Rule {
+public class NotNullRule extends DelayedProcessingRule {
 
     @Override
-    public ResponseCode apply(String cred) {
+    public ResponseCode applyRule(String cred) {
         if (StringUtils.isAllBlank(cred)) {
             return ResponseCode.EMPTY_CREDENTIALS;
         }

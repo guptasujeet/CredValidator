@@ -6,6 +6,7 @@ public enum ResponseCode {
     NO_SMALL_CHAR,
     NO_CAPS_CHAR,
     NO_NUMBER,
-    EMPTY_CREDENTIALS
+    EMPTY_CREDENTIALS,
+    SERVER_ERROR
 
 }

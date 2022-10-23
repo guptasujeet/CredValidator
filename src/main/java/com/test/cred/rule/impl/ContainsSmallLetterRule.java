@@ -11,7 +11,7 @@ public class ContainsSmallLetterRule extends AbstractLetterRule {
     }
 
     @Override
-    public ResponseCode apply(String cred) {
+    public ResponseCode applyRule(String cred) {
 
         boolean hasCaps = checkIfApplicable(cred);
 

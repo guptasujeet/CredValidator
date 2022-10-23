@@ -1,7 +1,7 @@
 package com.test.cred.validator;
 
 
-import com.test.cred.model.FailureReason;
+import com.test.cred.model.ResponseCode;
 import com.test.cred.model.ValidationResult;
 import org.junit.Test;
 
@@ -37,7 +37,7 @@ public class CredValidatorTest {
         ValidationResult result = credValidator.validate("Less8");
 
         assertFalse(result.isSuccess());
-        assertTrue(result.getFailureReasons().contains(FailureReason.LESS_THAN_8_CHAR));
+        assertTrue(result.getResponseCodes().contains(ResponseCode.LESS_THAN_8_CHAR));
     }
 
     @Test
@@ -47,8 +47,8 @@ public class CredValidatorTest {
         ValidationResult result = credValidator.validate("MY_VERY_BIG_PASSWORD");
 
         assertFalse(result.isSuccess());
-        assertTrue(result.getFailureReasons().contains(FailureReason.NO_SMALL_CHAR));
-        assertTrue(result.getFailureReasons().contains(FailureReason.NO_NUMBER));
+        assertTrue(result.getResponseCodes().contains(ResponseCode.NO_SMALL_CHAR));
+        assertTrue(result.getResponseCodes().contains(ResponseCode.NO_NUMBER));
     }
 
     @Test
@@ -58,8 +58,8 @@ public class CredValidatorTest {
         ValidationResult result = credValidator.validate("another-big-password");
 
         assertFalse(result.isSuccess());
-        assertTrue(result.getFailureReasons().contains(FailureReason.NO_CAPS_CHAR));
-        assertTrue(result.getFailureReasons().contains(FailureReason.NO_NUMBER));
+        assertTrue(result.getResponseCodes().contains(ResponseCode.NO_CAPS_CHAR));
+        assertTrue(result.getResponseCodes().contains(ResponseCode.NO_NUMBER));
     }
 
 

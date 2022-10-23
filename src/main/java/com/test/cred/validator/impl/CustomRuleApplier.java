@@ -1,7 +1,8 @@
-package com.test.cred.validator;
+package com.test.cred.validator.impl;
 
 import com.test.cred.model.ValidationResult;
 import com.test.cred.rule.Rule;
+import com.test.cred.validator.CredValidator;
 
 import java.util.List;
 

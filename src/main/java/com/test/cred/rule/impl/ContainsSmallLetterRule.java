@@ -1,6 +1,7 @@
-package com.test.cred.rule;
+package com.test.cred.rule.impl;
 
 import com.test.cred.model.ResponseCode;
+import com.test.cred.rule.AbstractLetterRule;
 
 public class ContainsSmallLetterRule extends AbstractLetterRule {
 

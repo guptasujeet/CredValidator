@@ -1,7 +1,7 @@
-package com.test.cred.validator;
+package com.test.cred.validator.impl;
 
 import com.google.common.collect.Lists;
-import com.test.cred.rule.*;
+import com.test.cred.rule.impl.*;
 
 public class AllRuleSerialCredValidator extends SerialCredValidator {
 

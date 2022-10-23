@@ -7,7 +7,7 @@ public abstract class AbstractLetterRule implements Rule {
 
     private final Predicate<Character> predicate;
 
-    AbstractLetterRule(Predicate<Character> predicate) {
+    public AbstractLetterRule(Predicate<Character> predicate) {
         this.predicate = predicate;
     }
 

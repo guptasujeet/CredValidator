@@ -3,6 +3,7 @@ package com.test.cred.validator;
 
 import com.test.cred.model.ResponseCode;
 import com.test.cred.model.ValidationResult;
+import com.test.cred.validator.impl.AllRuleSerialCredValidator;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

@@ -1,4 +1,4 @@
-package com.test.cred.validator;
+package com.test.cred.validator.impl;
 
 import com.test.cred.model.ResponseCode;
 import com.test.cred.model.ValidationResult;

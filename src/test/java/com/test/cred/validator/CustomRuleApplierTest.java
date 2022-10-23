@@ -3,8 +3,10 @@ package com.test.cred.validator;
 import com.google.common.collect.Lists;
 import com.test.cred.model.ResponseCode;
 import com.test.cred.model.ValidationResult;
-import com.test.cred.rule.ContainsSmallLetterRule;
+import com.test.cred.rule.impl.ContainsSmallLetterRule;
 import com.test.cred.rule.Rule;
+import com.test.cred.validator.impl.AnyThreeRuleSerialCredValidator;
+import com.test.cred.validator.impl.CustomRuleApplier;
 import org.junit.Test;
 
 import java.util.List;

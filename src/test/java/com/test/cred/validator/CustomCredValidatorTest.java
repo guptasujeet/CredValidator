@@ -6,7 +6,7 @@ import com.test.cred.model.ValidationResult;
 import com.test.cred.rule.impl.ContainsSmallLetterRule;
 import com.test.cred.rule.Rule;
 import com.test.cred.validator.impl.AnyThreeRuleSerialCredValidator;
-import com.test.cred.validator.impl.CustomRuleApplier;
+import com.test.cred.validator.impl.CustomCredValidator;
 import org.junit.Test;
 
 import java.util.List;
@@ -15,14 +15,14 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class CustomRuleApplierTest {
+public class CustomCredValidatorTest {
 
     private final List<Rule> mandatoryRule = Lists.newArrayList(new ContainsSmallLetterRule());
     private final CredValidator nextValidator = new AnyThreeRuleSerialCredValidator();
 
     @Test
     public void testCredValidator_ValidPassword_Caps_Small_NotNull() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("Lar");
 
@@ -33,7 +33,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_ValidPassword_Caps_Small_Number() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("LargerThan8#@$%%%");
 
@@ -45,7 +45,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_InvalidPassword_Number_Caps_NotNull() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("L2");
 
@@ -56,7 +56,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_ValidPassword_Number_Small_NotNull() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("a1");
 
@@ -67,7 +67,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_InvalidPassword_LessThan8Chars() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("2");
 
@@ -77,7 +77,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_ValidPassword_NoSmallLetter() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("MY_VERY_BIG_PASSWORD");
 
@@ -88,7 +88,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_InvalidPassword_NoCapslLetter() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("an");
 
@@ -99,7 +99,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_InvalidPassword_Empty() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate("");
 
@@ -109,7 +109,7 @@ public class CustomRuleApplierTest {
 
     @Test
     public void testCredValidator_InvalidPassword_NULL() {
-        CredValidator credValidator = new CustomRuleApplier(mandatoryRule, nextValidator);
+        CredValidator credValidator = new CustomCredValidator(mandatoryRule, nextValidator);
 
         ValidationResult result = credValidator.validate(null);
 

@@ -6,13 +6,13 @@ import com.test.cred.validator.CredValidator;
 
 import java.util.List;
 
-public class CustomRuleApplier implements CredValidator {
+public class CustomCredValidator implements CredValidator {
 
 
     private final List<Rule> mandatoryRules;
     private final CredValidator nextValidator;
 
-    public CustomRuleApplier(List<Rule> mandatoryRules, CredValidator nextValidator) {
+    public CustomCredValidator(List<Rule> mandatoryRules, CredValidator nextValidator) {
         this.mandatoryRules = mandatoryRules;
         this.nextValidator = nextValidator;
     }

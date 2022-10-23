@@ -13,6 +13,9 @@ public abstract class AbstractLetterRule implements Rule {
 
     protected boolean checkIfApplicable(String cred) {
 
+        if (cred == null) {
+            return false;
+        }
         boolean isApplicable = false;
 
         for (int i = 0; i < cred.length(); i++) {
